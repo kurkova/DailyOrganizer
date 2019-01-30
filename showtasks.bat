@@ -6,7 +6,7 @@ goto fail
 
 :browser
 opera "http://localhost:8080/crud/v1/task/getTasks"
-timeout 30
+
 if "%ERRORLEVEL%" == "0" goto end
 echo.
 echo Problem with running opera browser.
