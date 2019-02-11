@@ -31,10 +31,10 @@ public class TrelloClientTest {
     private RestTemplate restTemplate;
 
     @Mock
-    TrelloConfig trelloConfig;
+    private TrelloConfig trelloConfig;
 
     @Mock
-    TrelloBadgesDto trelloBadgestDto;
+    private TrelloBadgesDto trelloBadgestDto;
 
     @Before
     public void init() {
