@@ -71,9 +71,9 @@ public class TrelloMapperTestSuite {
         //Given
         TrelloCardDto trelloCardDto = new TrelloCardDto("Thursday", "descr", "pos2", "2");
         //When
-        TrelloCard mappedTrelloCardD = trelloMapper.mapToCard(trelloCardDto);
+        TrelloCard mappedTrelloCard = trelloMapper.mapToCard(trelloCardDto);
         //Then
-        assertEquals(trelloCardDto.getDescription(), mappedTrelloCardD.getDescription());
+        assertEquals(trelloCardDto.getDescription(), mappedTrelloCard.getDescription());
     }
 
     @Test
