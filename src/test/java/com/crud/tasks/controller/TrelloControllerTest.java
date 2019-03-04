@@ -72,7 +72,7 @@ public class TrelloControllerTest {
     }
 
     @Test
-    public void shouldCreateTrelloCard(){
+    public void shouldCreateTrelloCard () throws Exception{
         //Given
         TrelloCardDto trelloCardDto = new TrelloCardDto("Test", "Test description", "top", "1");
         CreatedTrelloCardDto createdTrelloCardDto = new CreatedTrelloCardDto("323", "Test", "http://test.com");
