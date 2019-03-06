@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "endpoints.metrics.enabled",
+      "type": "java.lang.String",
+      "description": "Description for endpoints.metrics.enabled."
+  }
+] }
