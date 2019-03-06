@@ -36,6 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @WebMvcTest(TaskController.class)
 public class TaskControllerTest {
+    private Task task = new Task(1L, "title", "content");
     @Autowired
     private MockMvc mockMvc;
     @MockBean
@@ -55,7 +56,6 @@ public class TaskControllerTest {
                 .andExpect(jsonPath("$", hasSize(0)));
     }
 
-
     @Test
     public void shouldFetchTasksList() throws Exception {
         //Given
@@ -64,7 +64,6 @@ public class TaskControllerTest {
         tasksDtoList.add(taskDto);
 
         List<Task> taskList = new ArrayList<>();
-        Task task = new Task(1L, "title", "content");
         taskList.add(task);
 
         when(taskMapper.mapToTaskDtoList(taskList)).thenReturn(tasksDtoList);
@@ -83,7 +82,6 @@ public class TaskControllerTest {
     public void shouldFetchTask() throws Exception {
         //Given
         TaskDto taskDto = new TaskDto(1L, "title", "content");
-        Task task = new Task(1L, "title", "content");
         when(taskMapper.mapToTaskDto(ArgumentMatchers.any(Task.class))).thenReturn(taskDto);
         when(dbService.getTaskById(taskDto.getId())).thenReturn(Optional.of(task));
         //When&Then
@@ -101,7 +99,6 @@ public class TaskControllerTest {
         //Given
         TaskDto taskDto = new TaskDto(1L, "title", "content");
         Task task = new Task(1L, "title", "content");
-
         when(taskMapper.mapToTask(ArgumentMatchers.any(TaskDto.class))).thenReturn(task);
 
         Gson gson = new Gson();
@@ -115,15 +112,12 @@ public class TaskControllerTest {
 
         verify(dbService).saveTask(taskCaptor.capture());
         assertEquals("content", taskCaptor.getValue().getContent());
-
     }
 
     @Test
     public void shouldUpdateTask() throws Exception {
         //Given
         TaskDto taskDto = new TaskDto(1L, "title", "content");
-        Task task = new Task(1L, "title", "content");
-
         when(taskMapper.mapToTaskDto(ArgumentMatchers.any(Task.class))).thenReturn(taskDto);
         when(dbService.saveTask(ArgumentMatchers.any(Task.class))).thenReturn(task);
         when(taskMapper.mapToTask(ArgumentMatchers.any(TaskDto.class))).thenReturn(task);
@@ -140,11 +134,9 @@ public class TaskControllerTest {
                 .andExpect(jsonPath("$.content", is("content")));
     }
 
-
     @Test
     public void shouldDeleteTask() throws Exception {
         //Given
-        Task task = new Task(1L, "title", "content");
         when(dbService.getTaskById(task.getId())).thenReturn(Optional.of(task));
         //When&Then
         mockMvc.perform(delete("/v1/task/deleteTask")
