@@ -37,7 +37,6 @@ public class TrelloControllerTest {
     @MockBean
     private TrelloFacade trelloFacade;
 
-
     @Test
     public void shouldFetchEmptyTrelloBoards() throws Exception {
         //Given
