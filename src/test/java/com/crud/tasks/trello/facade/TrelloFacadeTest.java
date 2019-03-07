@@ -97,6 +97,7 @@ public class TrelloFacadeTest {
                 assertEquals(false, trelloListDto.isClosed());
             });
         });
-
     }
+
+
 }
