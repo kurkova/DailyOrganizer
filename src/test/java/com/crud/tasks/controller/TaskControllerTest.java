@@ -44,6 +44,8 @@ public class TaskControllerTest {
     private DbService dbService;
     @Captor
     private ArgumentCaptor<Task> taskCaptor;
+    @Captor
+    private ArgumentCaptor<Long> taskIdCaptor;
 
     @Test
     public void shouldFetchEmptyTasksList() throws Exception {
@@ -138,16 +140,16 @@ public class TaskControllerTest {
     public void shouldDeleteTask() throws Exception {
         //Given
         when(dbService.getTaskById(task.getId())).thenReturn(Optional.of(task));
+        doNothing().when(dbService).deleteTask(taskIdCaptor.capture());
         //When&Then
         mockMvc.perform(delete("/v1/task/deleteTask").contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .param("taskId", "1"))
                 .andExpect(status().is(200));
 
-        verify(dbService, times(1)).getTaskById(task.getId());
-        verify(dbService, times(1)).deleteTask(task.getId());
-        verifyNoMoreInteractions(dbService);
+        assertEquals(taskIdCaptor.getValue(), task.getId());
     }
+
 
     @Test
     public void shouldDeleteNoExistingTask() throws Exception {
