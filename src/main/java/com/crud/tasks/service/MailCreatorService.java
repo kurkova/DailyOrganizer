@@ -61,8 +61,7 @@ public class MailCreatorService {
         context.setVariable("company_name", companyDetails.getAppName());
         context.setVariable("company_details", companyDetails.getAppName() + "\n" +
                 companyDetails.getOwnerName() + " " + companyDetails.getOwnerSurname());
-        context.setVariable("show_button", false);
-        context.setVariable("is_friend", false);
+        context.setVariable("show_button", true);
         context.setVariable("admin_config", adminConfig);
         return templateEngine.process("mail/daily-information-mail", context);
     }
