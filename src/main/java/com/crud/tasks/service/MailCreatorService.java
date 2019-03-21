@@ -45,4 +45,25 @@ public class MailCreatorService {
         context.setVariable("application_functionality", functionality);
         return templateEngine.process("mail/created-trello-card-mail", context);
     }
+
+    public String buildDailyInformationEmail (String message){
+        List<String> functionality = new ArrayList<>();
+        functionality.add("You can check your tasks for today");
+        functionality.add("You can manage your tasks");
+
+        Context context = new Context();
+        context.setVariable("message", message);
+        context.setVariable("tasks_url", "https://kurkova.github.io");
+        context.setVariable("button", "See tasks");
+        context.setVariable("application_functionality", functionality);
+        context.setVariable("admin_name", adminConfig.getAdminName());
+        context.setVariable("preview", "Trello app");
+        context.setVariable("company_name", companyDetails.getAppName());
+        context.setVariable("company_details", companyDetails.getAppName() + "\n" +
+                companyDetails.getOwnerName() + " " + companyDetails.getOwnerSurname());
+        context.setVariable("show_button", false);
+        context.setVariable("is_friend", false);
+        context.setVariable("admin_config", adminConfig);
+        return templateEngine.process("mail/daily-information-email", context);
+    }
 }
