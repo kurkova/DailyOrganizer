@@ -64,6 +64,6 @@ public class MailCreatorService {
         context.setVariable("show_button", false);
         context.setVariable("is_friend", false);
         context.setVariable("admin_config", adminConfig);
-        return templateEngine.process("mail/daily-information-email", context);
+        return templateEngine.process("mail/daily-information-mail", context);
     }
 }
