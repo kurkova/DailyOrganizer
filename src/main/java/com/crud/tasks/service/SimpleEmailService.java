@@ -40,17 +40,18 @@ public class SimpleEmailService {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setTo(mail.getMailTo());
             messageHelper.setSubject(mail.getSubject());
-            switch (mail.getSubject()) {
-                case TrelloService.SUBJECT:
-                    messageHelper.setText(mailCreatorService.buildTrelloCardEmail(mail.getMessage()), true);
-                    break;
-                case EmailScheduler.SUBJECT:
-                    messageHelper.setText(mailCreatorService.buildDailyInformationEmail(mail.getMessage()), true);
-                    break;
+            messageHelper.setText(mail.getMessage());
+//            messageHelper.setText(mailCreatorService.buildTrelloCardEmail(mail.getMessage()), true);
+//            messageHelper.setText(mailCreatorService.buildDailyInformationEmail(mail.getMessage()), true);
 
-            }
-        };
+            };
     }
+
+//    private MimeMessagePreparator sendDailyMail(){
+//        createMailMessage()
+//    }
+
+
 
     private SimpleMailMessage createMailMessage(final Mail mail) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
