@@ -8,10 +8,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static com.crud.tasks.domain.Mail.Type.DAILY_INFORMATION_EMAIL;
 import static com.crud.tasks.domain.Mail.Type.TRELLO_CARD_EMAIL;
 
@@ -27,17 +25,16 @@ public class MailCreatorService {
     @Qualifier("templateEngine")
     private TemplateEngine templateEngine;
 
-    public String build(String message, Mail.Type mailType){
-        if (mailType == TRELLO_CARD_EMAIL){
+    public String build(String message, Mail.Type mailType) {
+        if (mailType == TRELLO_CARD_EMAIL) {
             return buildTrelloCardEmail(message);
-        } else if (mailType == DAILY_INFORMATION_EMAIL){
+        } else if (mailType == DAILY_INFORMATION_EMAIL) {
             return buildDailyInformationEmail(message);
         }
         return "";
     }
 
     public String buildTrelloCardEmail(String message) {
-
         List<String> functionality = new ArrayList<>();
         functionality.add("You can manage your tasks");
         functionality.add("Provides connection with trello Account");
@@ -59,7 +56,7 @@ public class MailCreatorService {
         return templateEngine.process("mail/created-trello-card-mail", context);
     }
 
-    public String buildDailyInformationEmail (String message){
+    public String buildDailyInformationEmail(String message) {
         List<String> functionality = new ArrayList<>();
         functionality.add("You can check your tasks for today");
         functionality.add("You can manage your tasks");

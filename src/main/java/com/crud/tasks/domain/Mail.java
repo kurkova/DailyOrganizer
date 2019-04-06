@@ -3,8 +3,6 @@ package com.crud.tasks.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-
-
 @Getter
 @AllArgsConstructor
 public class Mail {
@@ -18,5 +16,4 @@ public class Mail {
         TRELLO_CARD_EMAIL,
         DAILY_INFORMATION_EMAIL
     }
-
 }

@@ -3,7 +3,6 @@ package com.crud.tasks.service;
 import com.crud.tasks.domain.Mail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
@@ -11,9 +10,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
-
 
 @Service
 public class SimpleEmailService {
@@ -41,23 +38,9 @@ public class SimpleEmailService {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setTo(mail.getMailTo());
             messageHelper.setSubject(mail.getSubject());
-<<<<<<< HEAD
             messageHelper.setText(mailCreatorService.build(mail.getMessage(), mail.getType()), true);
         };
-=======
-            messageHelper.setText(mail.getMessage());
-//            messageHelper.setText(mailCreatorService.buildTrelloCardEmail(mail.getMessage()), true);
-//            messageHelper.setText(mailCreatorService.buildDailyInformationEmail(mail.getMessage()), true);
-
-            };
->>>>>>> a0409a85d82b10e2d5db05f19e441790a19d934b
     }
-
-//    private MimeMessagePreparator sendDailyMail(){
-//        createMailMessage()
-//    }
-
-
 
     private SimpleMailMessage createMailMessage(final Mail mail) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
