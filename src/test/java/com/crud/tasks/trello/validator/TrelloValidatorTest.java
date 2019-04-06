@@ -2,7 +2,6 @@ package com.crud.tasks.trello.validator;
 
 import com.crud.tasks.domain.TrelloBoard;
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 

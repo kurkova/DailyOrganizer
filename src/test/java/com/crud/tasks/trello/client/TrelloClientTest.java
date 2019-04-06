@@ -33,9 +33,6 @@ public class TrelloClientTest {
     @Mock
     private TrelloConfig trelloConfig;
 
-    @Mock
-    private TrelloBadgesDto trelloBadgestDto;
-
     @Before
     public void init() {
         when(trelloConfig.getTrelloApiEndpoint()).thenReturn("http://test.com");
