@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1/trello")
 public class TrelloController {
-
     @Autowired
     private TrelloFacade trelloFacade;
 
@@ -28,7 +27,14 @@ public class TrelloController {
 }
 
 
-
+//    @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
+//    public List<TrelloBoardDto> getTrelloBoards() {
+//       List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
+//        return trelloBoards.stream()
+//                .filter(s -> s.getId() != null)
+//                .filter(n -> n.getName().contains("Kodilla"))
+//               .collect(Collectors.toList());
+//    }
 
 
 
