@@ -8,9 +8,10 @@ import lombok.Getter;
 public class Mail {
     private Type type;
     private String mailTo;
+    private String toCC;
     private String subject;
     private String message;
-    private String toCC;
+
 
     public enum Type{
         TRELLO_CARD_EMAIL,

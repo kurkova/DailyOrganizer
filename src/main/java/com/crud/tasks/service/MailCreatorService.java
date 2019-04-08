@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static com.crud.tasks.domain.Mail.Type.DAILY_INFORMATION_EMAIL;
 import static com.crud.tasks.domain.Mail.Type.TRELLO_CARD_EMAIL;
 

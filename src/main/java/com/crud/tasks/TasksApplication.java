@@ -15,6 +15,5 @@ public class TasksApplication  {
 //    public SpringApplicationBuilder configure(SpringApplicationBuilder application){
 //        return application.sources(TasksApplication.class);
 //    }
-
 }
 
