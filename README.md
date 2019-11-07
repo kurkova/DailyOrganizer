@@ -8,7 +8,8 @@ Application was created as a result of studying Java during Java Bootcamp.
 
 ### Frontend
 - [HTML]()
-- [CSS](https://getbootstrap.com/)
+- [CSS]()
 - [JQuery](https://jquery.com/)
 
-
+### Backend
+- [MySQL](https://www.mysql.com)
