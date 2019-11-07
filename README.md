@@ -9,5 +9,6 @@ Application was created as a result of studying Java during Java Bootcamp.
 ### Frontend
 - [HTML]()
 - [CSS](https://getbootstrap.com/)
-- [JQuery](https://www.npmjs.com/)
+- [JQuery](https://jquery.com/)
+
 
