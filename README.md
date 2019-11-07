@@ -7,7 +7,7 @@ Application was created as a result of studying Java during Java Bootcamp.
 ## Technologies & Frameworks
 
 ### Frontend
-- [HTML](https://angular.io/)
+- [HTML]
 - [CSS](https://getbootstrap.com/)
 - [JQuery](https://www.npmjs.com/)
 
