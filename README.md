@@ -1,6 +1,5 @@
-# OrganizerOfTasks
 
-This is CRUD application which help you manage your daily tasks. 
-Technology: Java8, Spring Boot, Hibernate, JDBC, MySQL, Thymeleaf, HTML, JQuery. 
+DailyOrganizer 
+Application which allows users to manage their daily tasks. Application is connecting with API Trello. 
+Application was created as a result of studying Java during Java Bootcamp. 
 
-Feel free to test this app: https://kurkova.github.io 
