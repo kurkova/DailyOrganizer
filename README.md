@@ -26,4 +26,4 @@ Application was created as a result of studying Java during Java Bootcamp.
 - [Selenium](https://www.seleniumhq.org/)
 
 ## Demo 
-https://kurkova.github.io
+- [DailyOrganizer](https://kurkova.github.io)
